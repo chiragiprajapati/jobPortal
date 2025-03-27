@@ -17,12 +17,12 @@ public class UserType {
     @Column(name = "user_type_id")
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int UserType;
+    private int userType;
 
     @Column (name = "user_type_name")
-    private String UserTypeName;
+    private String userTypeName;
 
-    @OneToMany (targetEntity = Users.class,cascade = CascadeType.ALL, mappedBy = "UserType")
+    @OneToMany (targetEntity = Users.class,cascade = CascadeType.ALL, mappedBy = "userType")
     private List<Users> user;
 
 }

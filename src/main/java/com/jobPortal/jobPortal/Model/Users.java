@@ -19,24 +19,24 @@ public class Users {
     @Column (name = "user_id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int UserId;
+    private int userId;
 
     @Column (name = "email" , unique = true)
-    private String UserEmail;
+    private String userEmail;
 
     @Column (name = "is_active")
-    private Boolean UserStatus;
+    private Boolean userStatus;
 
     @NonNull
     @Column (name = "password")
-    private String UserPwd;
+    private String userPwd;
 
     @DateTimeFormat (pattern = "dd-MM-yyyy")
     @Column (name = "registration_date")
-    private Date UserRegiDate;
+    private Date userRegiDate;
 
     @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn (name = "user_type_id", referencedColumnName = "user_type_id")
-    private UserType UserType;
+    private UserType userType;
 
 }

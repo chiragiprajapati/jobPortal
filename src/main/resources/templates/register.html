@@ -50,13 +50,26 @@
                                 method="post"
                         >
                             <div class="box-body bozero mx2p">
+
+                                <!-- Error message display -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div th:if="${error}" class="alert alert-danger" role="alert">
+                                                <p th:text="${error}"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End error message display -->
+
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <input
                                                     placeholder="Email"
                                                     name="email"
-                                                    th:field="*{UserEmail}"
+                                                    th:field="*{userEmail}"
                                                     type="email"
                                                     style="width: 100%"
                                                     class="form-control"
@@ -72,7 +85,7 @@
                                                     min="8"
                                                     placeholder="Password"
                                                     name="password"
-                                                    th:field="*{UserPwd}"
+                                                    th:field="*{userPwd}"
                                                     type="password"
                                                     class="form-control pwd"
                                                     required
@@ -85,12 +98,12 @@
                                         <select
                                                 required
                                                 class="form-control"
-                                                th:field="*{UserType}"
+                                                th:field="*{userType}"
                                         >
                                             <th:block th:each="userType :${getAllTypes}">
                                                 <option
                                                         th:text="${userType.userTypeName}"
-                                                        th:value="${userType.UserType}"
+                                                        th:value="${userType.userType}"
                                                 ></option>
                                             </th:block>
                                         </select>
