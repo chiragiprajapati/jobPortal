@@ -15,7 +15,7 @@ public class Skills {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "experience_level")
     private String experienceLevel;

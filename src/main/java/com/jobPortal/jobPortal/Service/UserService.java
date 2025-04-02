@@ -13,4 +13,6 @@ public interface UserService {
     Object getCurrentUserProfile();
 
     Users getCurrentUseer();
+
+    Users findByEmail(String currentUsername);
 }

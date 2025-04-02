@@ -89,4 +89,10 @@ public class UserServiceImp implements UserService{
 
         return null;
     }
+
+    @Override
+    public Users findByEmail(String currentUsername) {
+        return userRepository.findByUserEmail(currentUsername).orElseThrow(() -> new UsernameNotFoundException("User not " +
+                "found"));
+    }
 }
