@@ -41,4 +41,10 @@ public class RecruiterProfile {
 
     @Column (name = "state")
     private String state;
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (profilePhoto == null) return null;
+        return "/photos/recruiter/" + userAccountId + "/" + profilePhoto;
+    }
 }

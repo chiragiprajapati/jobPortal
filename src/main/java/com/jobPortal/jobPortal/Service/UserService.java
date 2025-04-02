@@ -11,4 +11,6 @@ public interface UserService {
     Optional<Users> getUserByEmail(String UserEmail);
 
     Object getCurrentUserProfile();
+
+    Users getCurrentUseer();
 }

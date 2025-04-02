@@ -77,4 +77,16 @@ public class UserServiceImp implements UserService{
 
         return null;
     }
+
+    @Override
+    public Users getCurrentUseer() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String username = authentication.getName();
+            Users user = userRepository.findByUserEmail(username).orElseThrow(() -> new UsernameNotFoundException("Could not found " + "user"));
+            return user;
+        }
+
+        return null;
+    }
 }
